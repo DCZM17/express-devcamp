@@ -4,28 +4,31 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
      await queryInterface.bulkInsert('bootcamps', [{
-       name: 'JS Advanced',
-       description: 'Bootcamp JS avansado ',
-       phone: '3117034623',
+       name: 'PHP Bootcamp',
+       description: 'Bootcamp for PHP learning',
+       phone: '(57)3117034623',
        email: 'dczapata55@misena.edu.co',
-       averageCost: '3000',
-       averageRating: '7'
+       averageCost: 3000,
+       averageRating: 7,
+       user_id: 2
       },
       {
           name: 'JS Basic',
-          description: 'Bootcamp JS basico ',
-          phone: '3117034623',
-          email: 'dczapata55@misena.edu.co',
-          averageCost: '1000',
-          averageRating: '8'
+          description: 'Bootcamp JS basic learning ',
+          phone: '(57)3118034223',
+          email: 'jogonzalez@misena.edu.co',
+          averageCost: 1000,
+          averageRating: 8,
+          user_id: 3
          },
          {
             name: 'Python Advanced',
             description: 'Bootcamp Python avansado ',
-            phone: '3117034623',
-            email: 'dczapata55@misena.edu.co',
-            averageCost: '5000',
-            averageRating: '6'
+            phone: '(57)3137034683',
+            email: 'jmadero@misena.edu.co',
+            averageCost: 5000,
+            averageRating: 6,
+            user_id:1
            }
     ], {});
     
