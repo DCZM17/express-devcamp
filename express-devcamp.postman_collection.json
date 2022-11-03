@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0b1f7871-8fd4-4ab3-ba7c-35714cea8aaf",
+		"_postman_id": "65be29d5-91b6-4a9e-82a7-a686e2deb297",
 		"name": "express-devcamp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -261,7 +261,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/v1/users/2",
+							"raw": "http://localhost:5000/api/v1/users/19",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -271,7 +271,7 @@
 								"api",
 								"v1",
 								"users",
-								"2"
+								"19"
 							]
 						}
 					},
@@ -290,7 +290,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Diana\",\r\n    \"email\" : \"maria@misena.edu.co\",\r\n    \"password\" : \"67890\"\r\n}"
+							"raw": "{\r\n    \"username\" : \"Gustavo\",\r\n    \"email\" : \"carlos@misena.edu.co\",\r\n    \"password\" : \"1234fa\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/v1/users",
@@ -321,10 +321,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Juan\",\r\n    \"email\" : \"juan@misena.edu.co\",\r\n    \"password\" : \"65214\"\r\n}"
+							"raw": "{\r\n    \"username\" : \"Esteban\",\r\n    \"email\" : \"juan@misena.edu.co\",\r\n    \"password\" : \"65214\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/v1/users/6",
+							"raw": "http://localhost:5000/api/v1/users/19",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -334,7 +334,7 @@
 								"api",
 								"v1",
 								"users",
-								"6"
+								"19"
 							]
 						}
 					},
@@ -346,7 +346,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/v1/users/4",
+							"raw": "http://localhost:5000/api/v1/users/19",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -356,7 +356,7 @@
 								"api",
 								"v1",
 								"users",
-								"4"
+								"19"
 							]
 						}
 					},
