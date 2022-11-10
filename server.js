@@ -9,6 +9,7 @@ const listEndpoint = require('express-list-endpoints')
 const bootcampRoutes = require('./routes/BootcampRoutes')
 const coursesRoutes = require('./routes/CoursesRoutes')
 const userRoutes = require('./routes/UserRoutes')
+const reviewsRoutes = require('./routes/ReviewsRoutes')
 
 
 //3. establecer archivo de configuracion
@@ -27,6 +28,7 @@ connectDB()
 app.use('/api/v1/bootcamps', bootcampRoutes)
 app.use('/api/v1/courses', coursesRoutes)
 app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/reviews', reviewsRoutes)
 
 
 //endpoints de dominio

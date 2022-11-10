@@ -4,22 +4,21 @@ const sequelize = require('../config/seq')
 //Datatypes de sequelize
 const { DataTypes, ValidationError } = require('sequelize')
 //el modelo
-const UserModel = require('../models/user')
-const user = require('../models/user')
-
+const CoursesModel = require('../models/courses')
+const {response} = require('express')
 //crear la entidad:
-const User = UserModel(sequelize, DataTypes)
+const Course = CoursesModel(sequelize, DataTypes)
 //listar todos los users
-exports.getAllUsers = async (req, resp) => {
+exports.getAllCourses = async (req, resp) => {
     try {
         //traer todos los usuarios
-        const users = await User.findAll();
+        const Courses = await Course.findAll();
         //response con los datos
         resp
             .status(200)
             .json({
                 "success": true,
-                "data": users
+                "data": Courses
             })
     } catch (error) {
         resp
@@ -33,23 +32,23 @@ exports.getAllUsers = async (req, resp) => {
 }
 
 // listar user por id
-exports.getSingleUser = async (req, resp) => {
+exports.getSingleCourse = async (req, resp) => {
     //console.log(req.params.id)
     try {
-        const singleUser = await User.findByPk(req.params.id);
-        if (singleUser) {
+        const singleCourse = await Course.findByPk(req.params.id);
+        if (singleCourse) {
             resp
                 .status(200)
                 .json({
                     "success": true,
-                    "data": singleUser
+                    "data": singleCourse
                 })
         } else {
             resp
                 .status(200)
                 .json({
                     "success": false,
-                    "errors": "usuario no existente"
+                    "errors": "Curso no existente"
                 })
         }
 
@@ -64,31 +63,31 @@ exports.getSingleUser = async (req, resp) => {
 }
 
 //actualizar user 
-exports.updateUser = async (req, resp) => {
+exports.updateCourse = async (req, resp) => {
     try {
-        const singleUser = await User.findByPk(req.params.id);
-        if(!singleUser){
+        const singleCourse = await Course.findByPk(req.params.id);
+        if(!singleCourse){
             resp
             .status(200)
             .json({
                 "success": false,
-                "errors": "usuario no existente"
+                "errors": "Curso no existente"
             })
         }else{
              // Change everyone without a last name to "Doe"
-        await User.update(req.body, {
+        await Course.update(req.body, {
             where: {
                 id: req.params.id
             }});
             //selecciona usuario actualizado
-            const updateUser = await User.findByPk(req.params.id);
+            const updateCourse = await Course.findByPk(req.params.id);
 
         //console.log(req.params.id)
         resp
             .status(200)
             .json({
                 "success": true,
-                "data": updateUser
+                "data": updateCourse
             })
         }
     } catch (error) {
@@ -103,18 +102,18 @@ exports.updateUser = async (req, resp) => {
 }
 
 //Borrar users
-exports.deleteUser = async(req , res)=>{
+exports.deleteCourse = async(req , res)=>{
     try {
-        const singleUser = await User.findByPk(req.params.id);
-        if (!singleUser) {
+        const singleCourse = await Course.findByPk(req.params.id);
+        if (!singleCourse) {
             res
                 .status(200)
                 .json({
                     "success": false,
-                    "errors": "Usuario no existente"
+                    "errors": "Course no existente"
                 })
         } else {
-            await User.destroy({
+            await Course.destroy({
                 where: {
                 id: req.params.id
                 }
@@ -123,7 +122,7 @@ exports.deleteUser = async(req , res)=>{
                 .status(200)
                 .json({
                     "success": true,
-                    "data": singleUser
+                    "data": singleCourse
                 })
         }
     } catch (error) {
@@ -139,14 +138,14 @@ exports.deleteUser = async(req , res)=>{
     
 
 //crear nuevo user
-exports.createUser = async (req, resp) => {
+exports.createCourse = async (req, resp) => {
     try {
-        const newUser = await User.create(req.body);
+        const newCourse = await Course.create(req.body);
         resp
             .status(200)
             .json({
                 "success": true,
-                "data": newUser
+                "data": newCourse
             })
     } catch (error) {
         if (error instanceof ValidationError) {
